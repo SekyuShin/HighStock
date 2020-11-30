@@ -1,0 +1,6 @@
+E:\StockProject\HighStock\Model\bin\Debug\Model.dll
+E:\StockProject\HighStock\Model\bin\Debug\Model.pdb
+E:\StockProject\HighStock\Model\obj\Debug\Model.csprojAssemblyReference.cache
+E:\StockProject\HighStock\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\StockProject\HighStock\Model\obj\Debug\Model.dll
+E:\StockProject\HighStock\Model\obj\Debug\Model.pdb

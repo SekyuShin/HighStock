@@ -1,0 +1,68 @@
+﻿<Window x:Class="HighStock.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:fi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+
+        xmlns:local="clr-namespace:HighStock"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="490" Width="800" >
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" >
+            <Button Content="Setting" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Command="{Binding SettingCommand}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <StackPanel Orientation="Vertical" Margin="5,5,5,32">
+                <DockPanel Margin="5,5,5,5" >
+                    <TextBox Text="{Binding TxtDateData}"   Height="20" Width="176" />
+                    <Button Content="INPUT" HorizontalAlignment="Right" Command="{Binding InputDateCommand}"/>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Left" Height="333" VerticalAlignment="Bottom" Width="226" >
+                    <ListView  ItemsSource ="{Binding StockDates}" SelectedItem="{Binding SelectStockDate, Mode=TwoWay}" Margin="0,0,0,10" >
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <StackPanel >
+                                    <TextBlock Text="{Binding StrDate}" Width="226" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DockPanel>
+            </StackPanel>
+
+            <DockPanel HorizontalAlignment="Left" Height="353" VerticalAlignment="Top" Width="541" Margin="5,0,0,0">
+                <ListView ItemsSource="{Binding SelectStockDate.StockVolume}" ItemTemplate="{DynamicResource DataTemplate_vindex}" SelectedItem="{Binding SelectStockInfo, Mode=TwoWay}" Margin="0,0,0,-13">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Index" Width="40" CellTemplate="{StaticResource DataTemplate_vindex}" ></GridViewColumn>
+                            <GridViewColumn Header="거래량" Width="130"  CellTemplate="{StaticResource DataTemplate_vname}" ></GridViewColumn>
+                            <GridViewColumn Header="value" Width="120"  CellTemplate="{StaticResource DataTemplate_volume}" ></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView ItemsSource="{Binding SelectStockDate.StockBullish}" ItemTemplate="{DynamicResource DataTemplate_bindex}" SelectedItem="{Binding SelectStockInfo, Mode=TwoWay}" Margin="0,0,0,-13">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Index" Width="40" CellTemplate="{StaticResource DataTemplate_bindex}" ></GridViewColumn>
+                            <GridViewColumn Header="상한주" Width="130"  CellTemplate="{StaticResource DataTemplate_bname}" ></GridViewColumn>
+                            <GridViewColumn Header="value" Width="40"  CellTemplate="{StaticResource DataTemplate_bullish}" ></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </DockPanel>
+
+        </StackPanel>
+
+    </Grid>
+    
+</Window>

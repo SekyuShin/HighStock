@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HighStock">
+    <DataTemplate x:Key="DataTemplate_vindex">
+        <TextBlock Text="{Binding Index}"></TextBlock>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_vname">
+        <TextBlock Text="{Binding StockName}"></TextBlock>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_volume">
+        <TextBlock Text="{Binding ShowVolume}"></TextBlock>
+    </DataTemplate>
+</ResourceDictionary>

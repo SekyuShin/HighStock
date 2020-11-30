@@ -1,0 +1,78 @@
+﻿<Window x:Class="HighStock.View.StockWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HighStock.View"
+        mc:Ignorable="d"
+        Title="StockWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" >
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition  Width="50*"/>
+                    <ColumnDefinition  Width="50*"/>
+                    <ColumnDefinition  Width="50*"/>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="90*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="종목이름" Grid.Row="0" Grid.Column="0" IsReadOnly="True"/>
+                <TextBox Text="종목코드" Grid.Row="0" Grid.Column="1" IsReadOnly="True"/>
+                <TextBox Text="종가" Grid.Row="0" Grid.Column="2" IsReadOnly="True"/>
+                <TextBox Text="전일대비" Grid.Row="0" Grid.Column="3" IsReadOnly="True"/>
+                <TextBox Text="전일비" Grid.Row="0" Grid.Column="4" IsReadOnly="True"/>
+                <TextBox Text="거래량" Grid.Row="0" Grid.Column="5" IsReadOnly="True"/>
+                <TextBox Text="거래대금" Grid.Row="0" Grid.Column="6" IsReadOnly="True"/>
+                <TextBox Text="시가" Grid.Row="0" Grid.Column="7" IsReadOnly="True"/>
+                <TextBox Text="고가" Grid.Row="0" Grid.Column="8"  IsReadOnly="True"/>
+                <TextBox Text="저가" Grid.Row="0" Grid.Column="9" IsReadOnly="True"/>
+                <TextBox Text="시가총액" Grid.Row="0" Grid.Column="10" IsReadOnly="True"/>
+                <TextBox Text="상장주식수" Grid.Row="0" Grid.Column="11" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.StockName, Mode=OneWay}" Grid.Row="1" Grid.Column="0" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.StockCode, Mode=OneWay}"  Grid.Row="1" Grid.Column="1" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowClose, Mode=OneWay}" Grid.Row="1" Grid.Column="2" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowChanges, Mode=OneWay}" Grid.Row="1" Grid.Column="3" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.StockChagesRatio, Mode=OneWay}" Grid.Row="1" Grid.Column="4" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowVolume, Mode=OneWay}" Grid.Row="1" Grid.Column="5" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowAmount, Mode=OneWay}" Grid.Row="1" Grid.Column="6" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowOpen, Mode=OneWay}" Grid.Row="1" Grid.Column="7"  IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowHigh, Mode=OneWay}" Grid.Row="1" Grid.Column="8" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowLow, Mode=OneWay}" Grid.Row="1" Grid.Column="9" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowMarcap, Mode=OneWay}" Grid.Row="1" Grid.Column="10" IsReadOnly="True"/>
+                <TextBox Text="{Binding SI.ShowStocks, Mode=OneWay}" Grid.Row="1" Grid.Column="11" IsReadOnly="True"/>
+            </Grid>
+                
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" >
+            <TextBox Text="당일기사"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Vertical" >
+            <TextBox Text="7일 이내 공시"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Vertical" >
+            <TextBox Text="일봉 차트"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Vertical" >
+            <TextBox Text="30분봉 차트"/>
+        </StackPanel>
+    </Grid>
+</Window>
