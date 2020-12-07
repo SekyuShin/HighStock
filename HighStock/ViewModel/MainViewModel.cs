@@ -88,14 +88,17 @@ namespace HighStock.ViewModel
                 case "SelectStockDate":
                     TxtDateData = selectStockDate.StrDate;
                     Console.WriteLine("selcetDate : " + selectStockDate.StrDate);
+                    selectStockInfo = null;
                     // 나중에 위치 이동 예정 delete
                     break;
                 case "SelectStockInfo":
-                    var stockWindow = new StockWindow();
-                    var stockViewModel = new StockViewModel(selectStockInfo);//
-                    stockWindow.DataContext = stockViewModel;
-                    stockWindow.ShowDialog();
-
+                    //Console.WriteLine("SelectStockInfo : "+ SelectStockInfo.StockName);
+                    if (selectStockInfo != null) {
+                        var stockWindow = new StockWindow();
+                        var stockViewModel = new StockViewModel(selectStockInfo);//
+                        stockWindow.DataContext = stockViewModel;
+                        stockWindow.ShowDialog();
+                    }
                     break;
             }
         }
