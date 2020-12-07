@@ -12,7 +12,7 @@ namespace HighStock.Type {
         List<TestPastStockInfo> si = new List<TestPastStockInfo>();
 
         public DBControl(int year) {
-
+            Console.WriteLine("Test start");
             ReadPastStockInfo(year);
             //StockDate sd = GetSelectStockDate(DateTime.ParseExact("2020-01-08", "yyyy-MM-dd", null), 10000000, 29);
             //ShowTest(sd);
@@ -21,8 +21,10 @@ namespace HighStock.Type {
 
         void ReadPastStockInfo(int year) {
             string totalPath = "./StockDB\\" + year+".txt";
+            
             String[] textValue;
             textValue = System.IO.File.ReadAllLines(totalPath);
+           
             if (textValue.Length > 0) {
                 for (int i = 0; i < textValue.Length; i++) {
                     if (String.IsNullOrWhiteSpace(textValue[i])) continue;
@@ -110,7 +112,9 @@ namespace HighStock.Type {
                 StockBulish.Clear();
                 int index = 0;
                 foreach (var i in tmpBulish) {
+                    
                     i.Index = index++;
+                    Console.WriteLine("{0} {1} {2} {3}", i.Index, i.StockName, i.ShowVolume, i.StockClose);
                     StockBulish.Add(i);
                 }
             }
