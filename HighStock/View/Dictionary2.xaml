@@ -1,13 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:HighStock">
-    <DataTemplate x:Key="DataTemplate_bindex">
-        <TextBlock Text="{Binding Index}"></TextBlock>
-    </DataTemplate>
     <DataTemplate x:Key="DataTemplate_bname">
         <TextBlock Text="{Binding StockName}"></TextBlock>
     </DataTemplate>
-    <DataTemplate x:Key="DataTemplate_bullish">
+    <DataTemplate x:Key="DataTemplate_bclose">
+        <TextBlock Text="{Binding ShowClose}"></TextBlock>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_vchanges">
+        <TextBlock Text="{Binding ShowChanges}"></TextBlock>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_vchangeratio">
         <TextBlock Text="{Binding StockChagesRatio}"></TextBlock>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_vvolume">
+        <TextBlock Text="{Binding ShowVolume}"></TextBlock>
     </DataTemplate>
 </ResourceDictionary>
