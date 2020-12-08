@@ -41,24 +41,37 @@
             </StackPanel>
 
             <DockPanel HorizontalAlignment="Left" Height="353" VerticalAlignment="Top" Width="541" Margin="5,0,0,0">
-                <ListView ItemsSource="{Binding SelectStockDate.StockVolume}" ItemTemplate="{DynamicResource DataTemplate_vindex}" SelectedItem="{Binding SelectStockInfo, Mode=TwoWay}" Margin="0,0,0,-13">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Index" Width="40" CellTemplate="{StaticResource DataTemplate_vindex}" ></GridViewColumn>
-                            <GridViewColumn Header="거래량" Width="130"  CellTemplate="{StaticResource DataTemplate_vname}" ></GridViewColumn>
-                            <GridViewColumn Header="value" Width="120"  CellTemplate="{StaticResource DataTemplate_volume}" ></GridViewColumn>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-                <ListView ItemsSource="{Binding SelectStockDate.StockBullish}" ItemTemplate="{DynamicResource DataTemplate_bindex}" SelectedItem="{Binding SelectStockInfo, Mode=TwoWay}" Margin="0,0,0,-13">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Index" Width="40" CellTemplate="{StaticResource DataTemplate_bindex}" ></GridViewColumn>
-                            <GridViewColumn Header="상한주" Width="130"  CellTemplate="{StaticResource DataTemplate_bname}" ></GridViewColumn>
-                            <GridViewColumn Header="value" Width="40"  CellTemplate="{StaticResource DataTemplate_bullish}" ></GridViewColumn>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
+                <TabControl >
+                    <TabItem Header="거래량 순위">
+                        <ListView ItemsSource="{Binding SelectStockDate.StockVolume}" ItemTemplate="{DynamicResource DataTemplate_index}" SelectedItem="{Binding SelectStockInfo, Mode=TwoWay}" Margin="0,0,0,-13">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Index" Width="40" CellTemplate="{StaticResource DataTemplate_index}" ></GridViewColumn>
+                                    <GridViewColumn Header="종목명" Width="130"  CellTemplate="{StaticResource DataTemplate_name}" ></GridViewColumn>
+                                    <GridViewColumn Header="현재가" Width="90"  CellTemplate="{StaticResource DataTemplate_close}" ></GridViewColumn>
+                                    <GridViewColumn Header="변동폭" Width="80"  CellTemplate="{StaticResource DataTemplate_changes}" ></GridViewColumn>
+                                    <GridViewColumn Header="변동률" Width="60"  CellTemplate="{StaticResource DataTemplate_changeratio}" ></GridViewColumn>
+                                    <GridViewColumn Header="거래량" Width="120"  CellTemplate="{StaticResource DataTemplate_volume}" ></GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        
+                    </TabItem>
+                    <TabItem Header="상한가">
+                        <ListView ItemsSource="{Binding SelectStockDate.StockBullish}" ItemTemplate="{DynamicResource DataTemplate_index}" SelectedItem="{Binding SelectStockInfo, Mode=TwoWay}" Margin="0,0,0,-13">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Index" Width="40" CellTemplate="{StaticResource DataTemplate_index}" ></GridViewColumn>
+                                    <GridViewColumn Header="종목명" Width="130"  CellTemplate="{StaticResource DataTemplate_name}" ></GridViewColumn>
+                                    <GridViewColumn Header="현재가" Width="90"  CellTemplate="{StaticResource DataTemplate_close}" ></GridViewColumn>
+                                    <GridViewColumn Header="변동폭" Width="80"  CellTemplate="{StaticResource DataTemplate_changes}" ></GridViewColumn>
+                                    <GridViewColumn Header="변동률" Width="60"  CellTemplate="{StaticResource DataTemplate_changeratio}" ></GridViewColumn>
+                                    <GridViewColumn Header="거래량" Width="120"  CellTemplate="{StaticResource DataTemplate_volume}" ></GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </TabItem>
+                </TabControl>
             </DockPanel>
 
         </StackPanel>
