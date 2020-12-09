@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ Description : STOCK DB를 읽어와 변수화 시켜주는 클래스
+     */
+
 namespace HighStock.Type {
     class DBControl {
         List<TestPastStockInfo> si = new List<TestPastStockInfo>();
@@ -121,15 +125,9 @@ namespace HighStock.Type {
             return new StockDate(dt,StockVolume, StockBulish);
 
         }
-        //public ObservableCollection<StockDate> GetTotalStockDate(int volumeSize, double bullishSize) {
 
-        //    DateTime dt = DateTime.ParseExact("1995-05-01", "yyyy-MM-dd", null);
-            
-        //    return sd;
-
-        //}
-
-        String ValueChangeUnit(String value) { //단위 일, 천, 백만, 십억, 일조 
+        String ValueChangeUnit(String value) { 
+            //단위 일, 천, 백만, 십억, 일조 //단위가 int형 또는 long형의 표현 범위를 넘어가는 경우가 있어서 만들었지만 귀찮아서 string으로 전부 넘김 사용은 안하지만 혹시몰라 보존중
             String rValue = "";
             int len = value.Length;
             if (len < 7) { // 일, 천

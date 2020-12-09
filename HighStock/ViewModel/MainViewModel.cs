@@ -26,22 +26,18 @@ namespace HighStock.ViewModel
             set { stockDates = value; }
             get { return stockDates; }
         }
-        public MainViewModel() {
+        public MainViewModel() { //생성자, new로 변수 생성하면 무조건 호출되는 함수다.
             int reProcess = RunProcess("StockDB\\SeachingStockData.exe");
             if (reProcess == 0) MessageBox.Show("DB Update success");
             else MessageBox.Show("DB Update fail");
             dbcontrol = new DBControl(2020);
             StockDates.Add(dbcontrol.GetSelectStockDate(DateTime.ParseExact("2020-11-20", "yyyy-MM-dd", null), 10000000, 29));
             //StockDates=dbcontrol.GetTotalStockDate( 10000000, 29);
-
         }
 
-        
-   
-        //TempSetting
-        SettingStockInfo settingStockInfo = new SettingStockInfo("000","0", "0", "0", "0","000", "0", "0", "0");
+        SettingStockInfo settingStockInfo = new SettingStockInfo("000","0", "0", "0", "0","000", "0", "0", "0"); //세팅값 아직 적용전, dialog와 기본 구조만 만들어놓음
 
-        private String txtDateData; //날짜입력 text창
+        private String txtDateData; //날짜입력 text창, calendar로 대체 예정
         public String TxtDateData {
             get { return this.txtDateData; }
             set {
@@ -51,7 +47,7 @@ namespace HighStock.ViewModel
         }
 
         private StockDate selectStockDate;
-        public StockDate SelectStockDate {
+        public StockDate SelectStockDate { // 날짜 선택 변수
             get { return this.selectStockDate; }
             set {
                 selectStockDate = value;
@@ -59,7 +55,7 @@ namespace HighStock.ViewModel
             }
         }
         private StockInfo selectStockInfo;
-        public StockInfo SelectStockInfo {
+        public StockInfo SelectStockInfo {  // 주식 선택 변수
             get { return this.selectStockInfo; }
             set {
                 selectStockInfo = value;
@@ -67,7 +63,7 @@ namespace HighStock.ViewModel
             }
         }
 
-        private int RunProcess(String FileName) {
+        private int RunProcess(String FileName) { //외부 응용프로그램 실행 함수, 이 프로그램에서는 python 응용프로그램을 실행한다.
             Process p = new Process();
 
             p.StartInfo.FileName = FileName;
@@ -80,7 +76,7 @@ namespace HighStock.ViewModel
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName) {
+        protected void OnPropertyChanged(string propertyName) { //WPF의 핵심, 변수가 변경되었을 경우 이벤트를 발생해 이 함수에 들어오게 된다. 
             if(PropertyChanged != null) {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
@@ -89,9 +85,8 @@ namespace HighStock.ViewModel
                     TxtDateData = selectStockDate.StrDate;
                     Console.WriteLine("selcetDate : " + selectStockDate.StrDate);
                     selectStockInfo = null;
-                    // 나중에 위치 이동 예정 delete
                     break;
-                case "SelectStockInfo":
+                case "SelectStockInfo": //주식 정보를 선택했을 경우에 dialog창을 생성해서 열어준다.
                     //Console.WriteLine("SelectStockInfo : "+ SelectStockInfo.StockName);
                     if (selectStockInfo != null) {
                         var stockWindow = new StockWindow();
@@ -104,11 +99,11 @@ namespace HighStock.ViewModel
         }
 
         private ICommand settingCommand;
-        public ICommand SettingCommand {
+        public ICommand SettingCommand { //ICommand 는 기본적으로 버튼 클릭시, 메소드를 실행해준다.
             get { return (this.settingCommand) ?? (this.settingCommand = new DelegateCommand(Setting)); }
         }
         
-        private void Setting() {
+        private void Setting() { //세팅 dialog인데 미완성
             Console.WriteLine("1. Setting : "+settingInfo.BullishValue +", "+ settingInfo.VolumeValue);
             var settingDialog = new SettingDialog();
             var settingViewModel = new SettingViewModel(settingInfo);
@@ -117,7 +112,7 @@ namespace HighStock.ViewModel
 
             Console.WriteLine("1. Setting : " + settingInfo.BullishValue + ", " + settingInfo.VolumeValue);
         }
-        private ICommand inputDateCommand; // 날짜 입력 command
+        private ICommand inputDateCommand; // 날짜 입력 command, 추후에 달력으로 대체 예정
         public ICommand InputDateCommand {
             get { return (this.inputDateCommand) ?? (this.inputDateCommand = new DelegateCommand(InputDate)); }
         }
@@ -159,22 +154,12 @@ namespace HighStock.ViewModel
 
 
         }
-        //private ICommand showStockWindowCommand; // SHowStockWindow
-        //public ICommand ShowStockWindowCommand {
-        //    get { return (this.showStockWindowCommand) ?? (this.showStockWindowCommand = new DelegateCommand(ShowStockWindow)); }
-        //}
-        //private void ShowStockWindow() {
-        //    var stockWindow = new StockWindow();
-        //    var stockViewModel = new StockViewModel(stockinfo);//
-        //    stockWindow.DataContext = stockViewModel;
-        //    stockWindow.ShowDialog();
-        //}
 
-        
+    
         
     }
-    #region DelegateCommand Class
-    public class DelegateCommand : ICommand
+    #region DelegateCommand Class 
+    public class DelegateCommand : ICommand //하기 클래스의 경우, ICommand를 사용하기 위한 함수, 복붙하면 쉽게 가져오는 함수
     {
 
         private readonly Func<bool> canExecute;
@@ -239,18 +224,8 @@ namespace HighStock.ViewModel
     }
     #endregion
 
-    //public class Test : ObservableCollection<Score> {
-    //    public Test() {
-    //        Add(new Score() { SUBJECT = "Englsh", SCORE = 95 });
-    //        Add(new Score() { SUBJECT = "Mathmatics", SCORE = 55 });
-    //        Add(new Score() { SUBJECT = "History", SCORE = 65 });
-    //    }
-    //}
-    //public class Score {
-    //    public String SUBJECT { get; set; }
-    //    public int SCORE { get; set; }
-    //}
-    public static class DispatcherService {
+
+    public static class DispatcherService { //UI 쓰레드와 프로그램 내부 쓰레드 충돌방지를 위한 클래스인데 사용하나?? 모르겠음
         public static void Invoke(Action action) {
             Dispatcher dispatchObject = Application.Current != null ? Application.Current.Dispatcher : null;
             if (dispatchObject == null || dispatchObject.CheckAccess())
