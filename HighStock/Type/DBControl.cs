@@ -14,9 +14,10 @@ using System.Threading.Tasks;
 namespace HighStock.Type {
     class DBControl {
         List<TestPastStockInfo> si = new List<TestPastStockInfo>();
-
+        private int year;
         public DBControl(int year) {
             Console.WriteLine("Test start");
+            this.year = year;
             ReadPastStockInfo(year);
             //StockDate sd = GetSelectStockDate(DateTime.ParseExact("2020-01-08", "yyyy-MM-dd", null), 10000000, 29);
             //ShowTest(sd);
@@ -147,6 +148,9 @@ namespace HighStock.Type {
             }
 
             return rValue;
+        }
+        public int GetYear() {
+            return year;
         }
     }
 }

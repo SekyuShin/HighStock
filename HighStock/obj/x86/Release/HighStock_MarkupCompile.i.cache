@@ -1,7 +1,7 @@
 ﻿HighStock
 
 
-exe
+winexe
 C#
 .cs
 E:\StockProject\HighStock\HighStock\obj\x86\Release\
@@ -12,9 +12,9 @@ TRACE
 E:\StockProject\HighStock\HighStock\App.xaml
 5434435139
 
-15-834731252
+15523895650
 16-1628177823
 View\Dictionary2.xaml;View\Dictionary1.xaml;View\MainWindow.xaml;View\SettingDialog.xaml;View\StockWindow.xaml;
 
-False
+True
 

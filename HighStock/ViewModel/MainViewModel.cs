@@ -145,7 +145,11 @@ namespace HighStock.ViewModel
                 }
             }
 
-            StockDate sd = dbcontrol.GetSelectStockDate(DateTime.ParseExact(tmpTxtDate, "yyyy-MM-dd", null), 10000000, 29);
+            DateTime dt = DateTime.ParseExact(tmpTxtDate, "yyyy-MM-dd", null);
+            if (dbcontrol.GetYear() != dt.Year)  {
+                dbcontrol = new DBControl(dt.Year);
+            } 
+            StockDate sd = dbcontrol.GetSelectStockDate(dt, 10000000, 29);
             if (sd == null) {
                 MessageBox.Show("DB가 존재하지 않습니다. 날짜를 확인하세요.");
                 return;
