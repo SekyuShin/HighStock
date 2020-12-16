@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C2C59196-92AC-4205-9D36-A7384763923C}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>HighStock</RootNamespace>
     <AssemblyName>HighStock</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -81,14 +81,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Type\DBControl.cs" />
+    <Compile Include="ViewModel\CalendarViewModel.cs" />
     <Compile Include="ViewModel\StockVIewModel.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
+    <Compile Include="View\CalendarDialog.xaml.cs">
+      <DependentUpon>CalendarDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SettingDialog.xaml.cs">
       <DependentUpon>SettingDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\StockWindow.xaml.cs">
       <DependentUpon>StockWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\CalendarDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Dictionary2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

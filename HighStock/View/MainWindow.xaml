@@ -18,8 +18,9 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" >
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Button Content="Setting" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Command="{Binding SettingCommand}"/>
+            <Button Content="calendar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Command="{Binding CalendarCommand}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <StackPanel Orientation="Vertical" Margin="5,5,5,32">

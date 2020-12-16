@@ -23,3 +23,5 @@ E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.csproj.CoreCompile
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.csproj.CopyComplete
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.exe
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.pdb
+E:\StockProject\HighStock\HighStock\obj\x86\Release\View\CalendarDialog.g.cs
+E:\StockProject\HighStock\HighStock\obj\x86\Release\View\CalendarDialog.baml
