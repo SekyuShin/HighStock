@@ -25,3 +25,7 @@ E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.exe
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.pdb
 E:\StockProject\HighStock\HighStock\obj\x86\Release\View\CalendarDialog.g.cs
 E:\StockProject\HighStock\HighStock\obj\x86\Release\View\CalendarDialog.baml
+E:\StockProject\HighStock\HighStock\bin\x86\Release\Microsoft.Expression.Interactions.dll
+E:\StockProject\HighStock\HighStock\bin\x86\Release\System.Windows.Interactivity.dll
+E:\StockProject\HighStock\HighStock\bin\x86\Release\Microsoft.Expression.Interactions.xml
+E:\StockProject\HighStock\HighStock\bin\x86\Release\System.Windows.Interactivity.xml

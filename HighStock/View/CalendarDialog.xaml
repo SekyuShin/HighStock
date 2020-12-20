@@ -3,12 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+
         xmlns:local="clr-namespace:HighStock.View"
         mc:Ignorable="d"
         Title="CalendarDialog" Height="450" Width="800">
     <Grid>
-
-        <Calendar x:Name="calendar" SelectedDate ="{Binding SelDate}" >
-        </Calendar>
+        <StackPanel Orientation="Vertical">
+            <Calendar x:Name="calendar"  SelectionMode="SingleRange">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectedDatesChanged" >
+                        <ei:CallMethodAction TargetObject="{Binding}" MethodName="TestSelectedDate"  />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Calendar>
+            <TextBlock Height="30" Width="100" Text="{Binding StartDate}"/>
+            <TextBlock Height="30" Width="100" Text="{Binding EndDate}"/>
+            <Button Height="30" Width="100" Content="Test">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click" >
+                        <ei:CallMethodAction TargetObject="{Binding}" MethodName="TestClick" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                
+            </Button>
+        </StackPanel>
+        
     </Grid>
 </Window>
