@@ -167,7 +167,10 @@ namespace HighStock.ViewModel {
             var calendarViewModel = new CalendarViewModel();//
             calendarDialog.DataContext = calendarViewModel;
             calendarDialog.ShowDialog();
+            String startDate = calendarViewModel.StartDate;
+            String endDate = calendarViewModel.EndDate;
 
+            Console.WriteLine("StartDate : {0}, EndDate : {1}",startDate, endDate);
         }
 
 

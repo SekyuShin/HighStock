@@ -9,8 +9,8 @@
 
         xmlns:local="clr-namespace:HighStock.View"
         mc:Ignorable="d"
-        Title="CalendarDialog" Height="450" Width="800">
-    <Grid>
+        Title="CalendarDialog" Height="300" Width="400">
+    <Grid Margin="0,0,2,-3">
         <StackPanel Orientation="Vertical">
             <Calendar x:Name="calendar"  SelectionMode="SingleRange">
                 <i:Interaction.Triggers>
