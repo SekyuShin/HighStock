@@ -1,9 +1,14 @@
 E:\StockProject\HighStock\HighStock\bin\x86\Release\HighStock.exe.config
 E:\StockProject\HighStock\HighStock\bin\x86\Release\HighStock.exe
 E:\StockProject\HighStock\HighStock\bin\x86\Release\HighStock.pdb
+E:\StockProject\HighStock\HighStock\bin\x86\Release\Microsoft.Expression.Interactions.dll
 E:\StockProject\HighStock\HighStock\bin\x86\Release\Model.dll
+E:\StockProject\HighStock\HighStock\bin\x86\Release\System.Windows.Interactivity.dll
 E:\StockProject\HighStock\HighStock\bin\x86\Release\Model.pdb
+E:\StockProject\HighStock\HighStock\bin\x86\Release\Microsoft.Expression.Interactions.xml
+E:\StockProject\HighStock\HighStock\bin\x86\Release\System.Windows.Interactivity.xml
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.csprojAssemblyReference.cache
+E:\StockProject\HighStock\HighStock\obj\x86\Release\View\CalendarDialog.g.cs
 E:\StockProject\HighStock\HighStock\obj\x86\Release\View\MainWindow.g.cs
 E:\StockProject\HighStock\HighStock\obj\x86\Release\View\SettingDialog.g.cs
 E:\StockProject\HighStock\HighStock\obj\x86\Release\View\StockWindow.g.cs
@@ -11,6 +16,7 @@ E:\StockProject\HighStock\HighStock\obj\x86\Release\App.g.cs
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock_MarkupCompile.cache
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock_MarkupCompile.lref
 E:\StockProject\HighStock\HighStock\obj\x86\Release\App.baml
+E:\StockProject\HighStock\HighStock\obj\x86\Release\View\CalendarDialog.baml
 E:\StockProject\HighStock\HighStock\obj\x86\Release\View\Dictionary2.baml
 E:\StockProject\HighStock\HighStock\obj\x86\Release\View\Dictionary1.baml
 E:\StockProject\HighStock\HighStock\obj\x86\Release\View\MainWindow.baml
@@ -23,9 +29,3 @@ E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.csproj.CoreCompile
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.csproj.CopyComplete
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.exe
 E:\StockProject\HighStock\HighStock\obj\x86\Release\HighStock.pdb
-E:\StockProject\HighStock\HighStock\obj\x86\Release\View\CalendarDialog.g.cs
-E:\StockProject\HighStock\HighStock\obj\x86\Release\View\CalendarDialog.baml
-E:\StockProject\HighStock\HighStock\bin\x86\Release\Microsoft.Expression.Interactions.dll
-E:\StockProject\HighStock\HighStock\bin\x86\Release\System.Windows.Interactivity.dll
-E:\StockProject\HighStock\HighStock\bin\x86\Release\Microsoft.Expression.Interactions.xml
-E:\StockProject\HighStock\HighStock\bin\x86\Release\System.Windows.Interactivity.xml

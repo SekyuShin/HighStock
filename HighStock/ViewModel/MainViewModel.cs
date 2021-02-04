@@ -86,12 +86,14 @@ namespace HighStock.ViewModel {
                     selectStockInfo = null;
                     break;
                 case "SelectStockInfo": //주식 정보를 선택했을 경우에 dialog창을 생성해서 열어준다.
-                    //Console.WriteLine("SelectStockInfo : "+ SelectStockInfo.StockName);
+                    Console.WriteLine("SelectStockInfo : "+ SelectStockInfo.StockName);
                     if (selectStockInfo != null) {
                         var stockWindow = new StockWindow();
-                        var stockViewModel = new StockViewModel(selectStockInfo);//
+                        var stockViewModel = new StockViewModel(selectStockInfo,dbcontrol.StockInfoDateList(selectStockInfo.StockCode, 10000000, 29));//
+                        
                         stockWindow.DataContext = stockViewModel;
                         stockWindow.ShowDialog();
+                        
                     }
                     break;
             }

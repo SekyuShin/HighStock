@@ -9,6 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
+            <RowDefinition Height="250" />
             <RowDefinition Height="25*" />
             <RowDefinition Height="25*" />
             <RowDefinition Height="100" />
@@ -62,16 +63,53 @@
             </Grid>
                 
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Vertical" >
+        <DockPanel  Grid.Row="1" >
+            <ListView   ItemsSource="{Binding StockInfoDateList}"  Margin="0,0,0,10" >
+                <ListView.View >
+                    <GridView>
+                        <GridViewColumn Header="날짜" Width="Auto"  >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding stockDate}" TextAlignment="Right" Width ="190" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="현재가" Width="Auto" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ShowClose}" Width ="100" TextAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="변동률" Width="Auto" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ChagesRatio}" Width ="60" TextAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="거래량" Width="Auto"  >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ShowVolume}" Width ="120" TextAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+        </DockPanel>
+        <StackPanel Grid.Row="2" Orientation="Vertical" >
             <TextBox Text="당일기사"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Vertical" >
+        <StackPanel Grid.Row="3" Orientation="Vertical" >
             <TextBox Text="7일 이내 공시"/>
         </StackPanel>
-        <StackPanel Grid.Row="3" Orientation="Vertical" >
+        <StackPanel Grid.Row="4" Orientation="Vertical" >
             <TextBox Text="일봉 차트"/>
         </StackPanel>
-        <StackPanel Grid.Row="4" Orientation="Vertical" >
+        <StackPanel Grid.Row="5" Orientation="Vertical" >
             <TextBox Text="30분봉 차트"/>
         </StackPanel>
     </Grid>
